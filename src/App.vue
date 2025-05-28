@@ -1,6 +1,7 @@
 <template>
   <div class="container">
     <h1 style="text-align: center; margin-bottom: 2rem;">穿越时间（资本版）</h1>
+    <audio ref="bgmRef" src="/bgm.mp3" autoplay loop />
 
     <!-- 选择框 -->
     <el-select v-model="selectedTime" placeholder="选择穿越时间" style="width: 100%; margin-bottom: 1rem">
@@ -38,6 +39,7 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue'
 import { ElMessage, ElMessageBox } from 'element-plus'
+
 
 // 状态变量
 const selectedTime = ref<number | 'custom' | ''>('')         // 用户选择的秒数
